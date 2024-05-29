@@ -7,18 +7,25 @@ const FirstCard = () => {
   // video에 hover시 썸네일 재생여부
   const [hover, setHover] = useState(null);
   const [scrollY, setScrollY] = useState(0);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!isInitialLoad) {
+        setScrollY(window.scrollY);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
 
+    // 페이지가 로드된 후에는 스크롤 이벤트를 감지
+    setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 1000);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isInitialLoad]);
 
   return (
     <S.BoxWrapper>
@@ -59,7 +66,6 @@ const S = {
   BoxWrapper: styled.div`
     display: flex;
     width: 100%;
-
   `,
   Box: styled.div`
     transition: transform 0.3s ease; // transform 변경 시 부드러운 애니메이션 적용

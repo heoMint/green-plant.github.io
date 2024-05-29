@@ -1,18 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { ContentItemsSet1 } from '../../context/data';
 import { ArrowUpRight } from 'react-feather';
 const FirstCard = () => {
   // video에 hover시 썸네일 재생여부
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <S.BoxWrapper>
       {ContentItemsSet1.map(({ id, videoUrl, boxStyle, videoTitle }) => (
         <S.Box
           key={id}
-          style={boxStyle}
+          style={{
+            ...boxStyle,
+            transform: `translateY(-${scrollY * 0.2}px)`, // 스크롤 위치에 따라 카드를 위로 이동
+          }}
         >
           <S.VideoItem
             onMouseOver={() => setHover(id)}
@@ -21,21 +37,11 @@ const FirstCard = () => {
             <S.ThumbnailWrapper>
               <ReactPlayer
                 url={videoUrl}
-                playing={false}
+                playing={hover === id}
                 width='100%'
                 height='500px'
               />
-              {hover === id && (
-                <S.Overlay>
-                  <ReactPlayer
-                    url={videoUrl}
-                    muted={true}
-                    width='100%'
-                    height='500px'
-                    playing={true}
-                  />
-                </S.Overlay>
-              )}
+
               <S.TitleWrapper>
                 <S.Title>{videoTitle}</S.Title>
                 <S.Icon>
@@ -53,27 +59,15 @@ const S = {
   BoxWrapper: styled.div`
     display: flex;
     width: 100%;
-    margin-bottom: 300px;
+
   `,
   Box: styled.div`
-    /* flex-grow: ${(props) => props.style.flexGrow || 1}; */
-    position: relative;
+    transition: transform 0.3s ease; // transform 변경 시 부드러운 애니메이션 적용
   `,
-  VideoItem: styled.div`
-    /* width: 100%; */
-  `,
+  VideoItem: styled.div``,
   ThumbnailWrapper: styled.div`
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
-  `,
-
-  Overlay: styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
   `,
 
   TitleWrapper: styled.div`

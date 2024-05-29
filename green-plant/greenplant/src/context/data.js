@@ -9,7 +9,7 @@ export const ContentItemsSet1 = [
   {
     id: 1,
     videoUrl: 'https://www.youtube.com/live/hfXpnl3u6BI?si=Wl7WRFSXMhDHsrv4',
-    thumbnailUrl: '',
+
     videoTitle: '리듬: 둘로 존재하는 것으로1',
     videoContent: '리듬이가 리듬리듬리듬1',
     boxStyle: {
@@ -65,7 +65,6 @@ export const ContentItemsSet3 = [
   {
     id: 2,
     videoUrl: 'https://www.youtube.com/live/hfXpnl3u6BI?si=Wl7WRFSXMhDHsrv4',
-    thumbnailUrl: '',
     videoTitle: '모델입니다.매력적입니다.',
     videoContent: '모델ㅇㅇㅇ2',
     boxStyle: {
@@ -85,7 +84,8 @@ export const SlideItemsSet = [
     id: 2,
     imageURL: 'https://picsum.photos/id/649/1000/500',
     imageTitle: '2번이미지',
-    boxStyle: {},
+    boxStyle: {
+    },
   },
   {
     id: 3,

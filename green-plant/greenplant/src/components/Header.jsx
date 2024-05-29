@@ -17,7 +17,11 @@ function Header() {
           <li>식물정보</li>
           <li>푸른수목원</li>
         </S.Tap>
-        <S.Lang>KR</S.Lang>
+        <div>
+          <S.Lang>KR</S.Lang>
+          {/* <li>KR</li>
+          <li>EN</li> */}
+        </div>
       </S.TapWrapper>
     </S.NavWrapper>
   );
@@ -35,7 +39,6 @@ const S = {
     background-color: transparent;
     position: absolute; // 위치를 배너 위에 고정
     top: 0;
-    width: 100%;
     z-index: 100;
 
     background: rgba(255, 255, 255, 0.19);
@@ -43,6 +46,7 @@ const S = {
     -webkit-backdrop-filter: blur(2.8px);
   `,
   Log: styled.div`
+    padding-left: 20px;
     img {
       width: 150px;
     }

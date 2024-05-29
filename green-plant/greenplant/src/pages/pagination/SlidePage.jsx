@@ -13,7 +13,7 @@ export default function SlidePage() {
   return (
     <Swiper
       slidesPerView={1.4}
-      spaceBetween={30}
+      spaceBetween={80}
       freeMode={true}
       pagination={{
         clickable: true,
@@ -43,15 +43,11 @@ export default function SlidePage() {
 }
 
 const S = {
-  SwiperSlide: styled.div`
-    display: flex;
-    flex-direction: column;
-  `,
   TitleWrapper: styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-bottom: 20px;
   `,
   Title: styled.h2`
     padding: 20px 8px 8px 8px;

@@ -5,7 +5,7 @@
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  background-color: #fc5404;
+  background-color: rgb(252, 83, 5, 0.8);
   opacity: 0;
   z-index: 10000;
   user-select: none;

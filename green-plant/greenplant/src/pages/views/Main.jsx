@@ -1,8 +1,8 @@
-import Banner from '../components/Banner';
-import Content from '../components/Content';
-import Section from '../components/Section';
+import Banner from '../../components/Banner';
+import Content from '../../components/Content';
+import Section from '../../components/Section';
+import SlidePage from '../pagination/SlidePage';
 import styled from 'styled-components';
-import SlidePage from './Pagination/SlidePage';
 
 const Main = () => {
   return (

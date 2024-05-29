@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { ContentItemsSet1 } from '../../context/data';
 import { ArrowUpRight } from 'react-feather';
-const FirstLineCard = () => {
+const FirstCard = () => {
   // video에 hover시 썸네일 재생여부
   const [hover, setHover] = useState(false);
 
@@ -19,15 +19,11 @@ const FirstLineCard = () => {
             onMouseOut={() => setHover(null)}
           >
             <S.ThumbnailWrapper>
-              {/* <S.Thumbnail
-                src={thumbnailUrl}
-                alt='Thumbnail'
-              /> */}
               <ReactPlayer
                 url={videoUrl}
                 playing={false}
                 width='100%'
-                height='auto'
+                height='500px'
               />
               {hover === id && (
                 <S.Overlay>
@@ -35,7 +31,7 @@ const FirstLineCard = () => {
                     url={videoUrl}
                     muted={true}
                     width='100%'
-                    height='auto'
+                    height='500px'
                     playing={true}
                   />
                 </S.Overlay>
@@ -77,8 +73,7 @@ const S = {
     top: 0;
     left: 0;
     display: block;
-    /* width: 100%; */
-    height: auto;
+    width: 100%;
   `,
 
   TitleWrapper: styled.div`
@@ -101,4 +96,4 @@ const S = {
     border-radius: 50%;
   `,
 };
-export default FirstLineCard;
+export default FirstCard;

@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import FirstLineCard from '../pages/Main/FirstLineCard';
-import SecondLineCard from '../pages/Main/SecondLineCard';
-import ThirdLineCard from '../pages/Main/ThirdLineCard';
+import FirstCard from '../pages/Main/FirstCard';
+import SecondCard from '../pages/Main/secondCard';
+import ThirdCard from '../pages/Main/ThirdCard';
 
 const Content = () => {
   return (
     <S.ContentWrapper>
       <S.Contents>
         <div>
-          <FirstLineCard />
+          <FirstCard />
         </div>
         <div>
-          <SecondLineCard />
+          <SecondCard />
         </div>
         <div>
-          <ThirdLineCard />
+          <ThirdCard />
         </div>
       </S.Contents>
     </S.ContentWrapper>

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Header from './Header';
 import ReactPlayer from 'react-player';
-import video from '/public/15462800-uhd_3840_2160_30fps.mp4';
 const Banner = () => {
   return (
     <>
@@ -9,10 +8,10 @@ const Banner = () => {
         <S.BannerWrapper>
           <Header />
           <ReactPlayer
-            url={video}
+            url='https://www.youtube.com/live/lCvQwnDCq6k?si=5nFg-4lSxdwSZ8SU'
             playing={true}
             width='100%'
-            height='auto'
+            height='100vh'
           />
         </S.BannerWrapper>
       </S.Banner>

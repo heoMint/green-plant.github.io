@@ -5,9 +5,9 @@ const Banner = () => {
   return (
     <S.BannerWrapper>
       <ReactPlayer
-        url='https://www.youtube.com/live/_u36muyjh8A?si=7pucQodPQi1zWvEM'
+        url='/public/banner.mp4'
         playing={true}
-        width='100vw'
+        width='100%'
         height='100vh'
       />
 

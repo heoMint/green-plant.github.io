@@ -19,8 +19,7 @@ const TextEffectRight = () => {
           end: '20%',
           scrub: true,
         },
-        rotation: 360,
-        duration: 1,
+
       });
     });
   }, []);
@@ -43,7 +42,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.h1`
-  font-size: 8vw;
+  font-size: 7rem;
   letter-spacing: -0.01em;
   line-height: 100%;
   margin: 0;
@@ -57,7 +56,7 @@ const Text = styled.h1`
 
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
 

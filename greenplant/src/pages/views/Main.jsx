@@ -18,8 +18,9 @@ const Main = () => {
         <Content />
         <S.SquareBox>
           <div></div>
+          <TextEffectRight />
         </S.SquareBox>
-        <TextEffectRight />
+        {/* <TextEffectRight /> */}
         <S.SlidePageWrapper>
           <SlidePage />
         </S.SlidePageWrapper>
@@ -50,17 +51,18 @@ const S = {
       width: 200px;
       height: 600px;
       background-color: #6bcb77;
-      transform: translate(150%, 90%);
+      transform: translate(150%, 20%);
     }
-    /* div:nth-child(1) {
-      width: 100%;
-      height: 600px;
-      background-color: #ffd93d;
-    } */
+    div:nth-child(2) {
+      transform: translate(70%, 21%);
+      width: 800px;
+      color: #c0c0c0;
+    }
   `,
   SlidePageWrapper: styled.div`
     position: relative;
     width: 90%;
+    transform: translateX(10%);
   `,
   FooterWrapper: styled.div`
     position: absolute;

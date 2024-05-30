@@ -8,7 +8,7 @@ const Banner = () => {
         url='/public/banner.mp4'
         playing={true}
         width='100%'
-        height='100vh'
+        height='100%'
       />
 
       <MouseWheel />

@@ -10,6 +10,7 @@ const MouseWheel = () => {
         animationData={AnimationMouseScroll}
         loop={true}
       />
+      <div>Scroll</div>
     </S.LottieWrapper>
   );
 };
@@ -22,5 +23,10 @@ const S = {
     bottom: 5%;
     z-index: 5;
     width: 70px;
+    display: grid;
+    justify-items: center;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
   `,
 };

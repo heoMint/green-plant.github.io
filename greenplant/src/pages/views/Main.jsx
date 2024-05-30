@@ -13,8 +13,8 @@ const Main = () => {
     <div>
       <S.MainWrapper>
         <Banner />
-        <Section />
         <TextEffect />
+        <Section />
         <Content />
         <S.SquareBox>
           <div></div>

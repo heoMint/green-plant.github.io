@@ -1,62 +1,151 @@
-import { useRef } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import ContentCard from './ContentCard';
+import 'animate.css';
+import { useEffect, useState } from 'react';
 
 const Section = () => {
-  const sectionRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [animateSubtitle, setAnimateSubtitle] = useState(false);
+  const [isContentCardItem, setIsContentCardItem] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!isInitialLoad) {
+        setScrollY(window.scrollY);
+        // 스크롤 위치가 1200 이하이면 애니메이션 상태를 false로 설정
+        if (window.scrollY <= 1200) {
+          setAnimateSubtitle(false);
+          setIsContentCardItem(false);
+        }
+        // 스크롤 위치가 1200 이상이면 애니메이션 상태를 true로 설정
+        else if (window.scrollY >= 1200) {
+          setAnimateSubtitle(true);
+          setIsContentCardItem(true);
+        }
+      }
+    };
+    console.log(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+
+    setTimeout(() => {
+      setIsInitialLoad(false);
+    }, 500); // 페이지가 로드된 후 0.5초 뒤에 스크롤 감지 시작
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInitialLoad]);
 
   return (
-    <SectionWrapper ref={sectionRef}>
-      <Image
-        src='src/assets/leaf.jpg'
-        alt='유칼립투스'
-        style={{ backgroundColor: 'red' }}
-      />
-      <Image
-        src='src/assets/leaf.jpg'
-        alt='유칼립투스'
-        style={{ backgroundColor: 'green' }}
-      />
-      <Image
-        src='src/assets/leaf.jpg'
-        alt='유칼립투스'
-        style={{ backgroundColor: 'blue' }}
-      />
-      <Image
-        src='src/assets/leaf.jpg'
-        alt='유칼립투스'
-        style={{ backgroundColor: 'yellow' }}
-      />
-      <Image
-        src='src/assets/leaf.jpg'
-        alt='유칼립투스'
-        style={{ backgroundColor: 'purple' }}
-      />
+    <SectionWrapper>
+      <S.SubTitle className={`${animateSubtitle ? 'animate__fadeInLeft' : ''}`}>
+        <p>BUSINESS AREA</p>
+        <p>
+          PFAS Free, Repulpable, Compostable의 가치는
+          <br />
+          우리 Green Plant가 나아가고자 하는 방향입니다.
+        </p>
+      </S.SubTitle>
+      <>
+        <S.SectionCard
+          className={`${isContentCardItem ? 'animate__fadeInUp' : ''}`}
+        >
+          <a>
+            <ContentCard />
+            <p>플라스틱 리싸이클</p>
+          </a>
+          <a>
+            <ContentCard />
+            <p>컨셔스 패션</p>
+          </a>
+        </S.SectionCard>
+      </>
+
       <Image
         src='src/assets/leaf.jpg'
         alt='유칼립투스'
         style={{ backgroundColor: 'orange' }}
       />
-      <VerticalContent>
-        <p>이것은 세로 스크롤 콘텐츠입니다.</p>
-        <p>이것은 세로 스크롤 콘텐츠입니다.</p>
-        <p>이것은 세로 스크롤 콘텐츠입니다.</p>
-      </VerticalContent>
     </SectionWrapper>
   );
 };
 
-const SectionWrapper = styled.div`
+const moveInRight = keyframes`
+  from {
+
+    transform: translateX(-600px);
+  }
+  to {
+
+    transform: translateX(150px);
+  }
+`;
+
+const moveInUp = keyframes`
+  from {
+      opacity: 0;
+      transform: translate(150px, 900px);
+  }
+  to {
+      opacity: 1;
+      transform: translate(150px, 0);
+  }
+`;
+const S = {
+  SectionCard: styled.div`
+    display: flex;
+    transform: translate(150px, 900px);
+    /* 애니메이션 CSS를 추가 */
+    &.animate__fadeInUp {
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-name: ${moveInUp};
+    }
+
+    a {
+      margin-right: 30px;
+
+      p {
+        padding: 20px 0;
+      }
+      font-size: 10px;
+    }
+  `,
+  SubTitle: styled.div`
+    display: flex;
+    transform: translateX(-600px);
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    width: 500px;
+    font-size: 14px;
+    /* 애니메이션 CSS를 추가 */
+    &.animate__fadeInLeft {
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-name: ${moveInRight};
+    }
+  `,
+};
+const SectionWrapper = styled.section`
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  width: 100%;
+  display: grid;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
 
-  &::-webkit-scrollbar {
-    display: none; /* 스크롤바 숨기기 */
+  p:nth-child(1) {
+    font-size: 1.4em;
+    color: #6bcb77;
+    padding-bottom: 10px;
+  }
+  p:nth-child(2) {
+    color: #222;
+    font-size: 2em;
+    margin-bottom: 50px;
   }
 `;
 
@@ -67,29 +156,5 @@ const Image = styled.img`
   object-position: center;
   scroll-snap-align: start;
 `;
-
-const VerticalContent = styled.div`
-  width: 100vw;
-  height: 200vh; /* 세로 스크롤을 테스트하기 위해 높이 증가 */
-  background: #f0f0f0;
-  display: block;
-`;
-
-// const S = {
-//   SectionWrapper: styled.div`
-//     position: relative;
-//     width: 100vw; /* 화면 너비에 맞게 설정 */
-//     height: 100vh; /* 화면 높이에 맞게 설정 */
-//     display: flex;
-//     align-items: center;
-
-//     img {
-//       width: 100%; /* 부모 요소에 맞게 이미지 크기 조정 */
-//       height: 100%; /* 부모 요소에 맞게 이미지 크기 조정 */
-//       object-fit: cover; /* 이미지가 부모 요소에 꽉 차도록 설정 */
-//       object-position: center; /* 이미지를 가운데 정렬 */
-//     }
-//   `,
-// };
 
 export default Section;

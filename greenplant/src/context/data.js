@@ -1,3 +1,18 @@
+export const ContentCardData = [
+  {
+    id: 1,
+    url: '/public/7048759-uhd_3840_2160_30fps.mp4',
+    title: '환경을 입는다. 컨셔스 패션',
+    content: '폐플라스틱과 폴리머를 화학적으로 재활용합니다.',
+  },
+  {
+    id: 2,
+    url: '/public/7048759-uhd_3840_2160_30fps.mp4',
+    title: 'upcycling',
+    content: '‘버려진 것’들의 무한한 변신',
+  },
+];
+
 export const BannerItem = [
   {
     id: 1,
@@ -84,8 +99,7 @@ export const SlideItemsSet = [
     id: 2,
     imageURL: 'https://picsum.photos/id/649/1000/500',
     imageTitle: '2번이미지',
-    boxStyle: {
-    },
+    boxStyle: {},
   },
   {
     id: 3,

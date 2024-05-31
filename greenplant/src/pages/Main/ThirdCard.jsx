@@ -27,7 +27,7 @@ const ThirdCard = () => {
           key={id}
           style={{
             ...boxStyle,
-            transform: `translateY(-${scrollY * 0.3}px)`, // 스크롤 위치에 따라 카드를 위로 이동
+            transform: `translateY(-${scrollY * 0.1}px)`, // 스크롤 위치에 따라 카드를 위로 이동
           }}
         >
           <S.VideoItem

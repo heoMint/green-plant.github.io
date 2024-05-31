@@ -11,12 +11,6 @@ const Content = () => {
         <SecondCard />
         <ThirdCard />
       </S.Contents>
-      {/* <S.Circle>
-        <img
-          src='/public/circle.svg'
-          alt='동그라미들'
-        />
-      </S.Circle> */}
     </S.ContentWrapper>
   );
 };
@@ -28,19 +22,5 @@ const S = {
   Contents: styled.div`
     transform: translateY(20%);
   `,
-
-  // Circle: styled.div`
-  //   width: 50%;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   transform: translate(750px,-300px);
-  //   img {
-  //     width: 100%; /* 부모 요소에 맞게 이미지 크기 조정 */
-  //     /* height: 100%; 부모 요소에 맞게 이미지 크기 조정 */
-  //     object-fit: cover; /* 이미지가 부모 요소에 꽉 차도록 설정 */
-  //     object-position: center; /* 이미지를 가운데 정렬 */
-  //   }
-  // `,
 };
 export default Content;

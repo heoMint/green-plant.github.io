@@ -63,7 +63,7 @@ const S = {
     width: 100%;
   `,
   Box: styled.div`
-    position: relative;
+    /* position: relative; */
     transition: transform 0.7s ease-in-out; // transform 변경 시 부드러운 애니메이션 적용
   `,
   VideoItem: styled.div``,

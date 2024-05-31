@@ -10,7 +10,6 @@ const Banner = () => {
         width='100%'
         height='100%'
       />
-
       <MouseWheel />
     </S.BannerWrapper>
   );
@@ -23,6 +22,7 @@ const S = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffd93d;
     &:nth-child(1) {
       position: relative;
     }

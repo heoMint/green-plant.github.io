@@ -34,7 +34,7 @@ const FirstCard = () => {
           key={id}
           style={{
             ...boxStyle,
-            transform: `translateY(-${scrollY * 0.4}px)`, // 스크롤 위치에 따라 카드를 위로 이동
+            transform: `translateY(-${scrollY * 0.1}px)`, // 스크롤 위치에 따라 카드를 위로 이동
           }}
         >
           <S.VideoItem
@@ -65,7 +65,7 @@ const FirstCard = () => {
 };
 const S = {
   BoxWrapper: styled.div`
-    transform: translateY(20%);
+
     display: flex;
     width: 100%;
   `,

@@ -15,7 +15,7 @@ const TextEffect = () => {
         ease: 'none',
         scrollTrigger: {
           trigger: text,
-          start: ' 90%',
+          start: ' 95%',
           end: '20%',
           scrub: true,
         },

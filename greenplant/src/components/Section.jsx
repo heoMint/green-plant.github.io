@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import ContentCard from './ContentCard';
-import 'animate.css';
 import { useEffect, useState } from 'react';
+import 'animate.css';
 
 const Section = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -13,19 +13,19 @@ const Section = () => {
     const handleScroll = () => {
       if (!isInitialLoad) {
         setScrollY(window.scrollY);
-        // 스크롤 위치가 1200 이하이면 애니메이션 상태를 false로 설정
-        if (window.scrollY <= 1200) {
+        // console.log(window.scrollY);
+        // 스크롤 위치가 9260 이하이면 애니메이션 상태를 false로 설정
+        if (window.scrollY <= 9260) {
           setAnimateSubtitle(false);
           setIsContentCardItem(false);
         }
-        // 스크롤 위치가 1200 이상이면 애니메이션 상태를 true로 설정
-        else if (window.scrollY >= 1200) {
+        // 스크롤 위치가 9260 이상이면 애니메이션 상태를 true로 설정
+        else if (window.scrollY >= 9260) {
           setAnimateSubtitle(true);
           setIsContentCardItem(true);
         }
       }
     };
-    console.log(window.scrollY);
     window.addEventListener('scroll', handleScroll);
 
     setTimeout(() => {
@@ -40,7 +40,7 @@ const Section = () => {
   return (
     <SectionWrapper>
       <S.SubTitle className={`${animateSubtitle ? 'animate__fadeInLeft' : ''}`}>
-        <p>BUSINESS AREA</p>
+        <h3>BUSINESS AREA</h3>
         <p>
           PFAS Free, Repulpable, Compostable의 가치는
           <br />
@@ -51,14 +51,8 @@ const Section = () => {
         <S.SectionCard
           className={`${isContentCardItem ? 'animate__fadeInUp' : ''}`}
         >
-          <a>
-            <ContentCard />
-            <p>플라스틱 리싸이클</p>
-          </a>
-          <a>
-            <ContentCard />
-            <p>컨셔스 패션</p>
-          </a>
+          <ContentCard />
+
         </S.SectionCard>
       </>
 
@@ -102,16 +96,23 @@ const S = {
       animation-fill-mode: both;
       animation-name: ${moveInUp};
     }
-
     a {
       margin-right: 30px;
-
-      p {
-        padding: 20px 0;
-      }
       font-size: 10px;
+      h3 {
+        padding-top: 20px;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
     }
   `,
+
   SubTitle: styled.div`
     display: flex;
     transform: translateX(-600px);
@@ -120,6 +121,17 @@ const S = {
     margin-top: 100px;
     width: 500px;
     font-size: 14px;
+
+    h3 {
+      font-size: 1.4em;
+      color: #6bcb77;
+      padding-bottom: 10px;
+    }
+    p:nth-child(2) {
+      color: #222;
+      font-size: 1.8em;
+      margin-bottom: 50px;
+    }
     /* 애니메이션 CSS를 추가 */
     &.animate__fadeInLeft {
       animation-duration: 2s;
@@ -136,17 +148,6 @@ const SectionWrapper = styled.section`
   overflow-y: hidden;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
-
-  p:nth-child(1) {
-    font-size: 1.4em;
-    color: #6bcb77;
-    padding-bottom: 10px;
-  }
-  p:nth-child(2) {
-    color: #222;
-    font-size: 2em;
-    margin-bottom: 50px;
-  }
 `;
 
 const Image = styled.img`

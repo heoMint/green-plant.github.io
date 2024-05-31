@@ -3,17 +3,20 @@ import Content from '../../components/Content';
 import Footer from '../../components/Footer';
 import Section from '../../components/Section';
 
-import TextEffect from '../../utils/TextEffect';
+// import TextEffect from '../../utils/TextEffect';
 import styled from 'styled-components';
 import SlidePage from '../pagination/SlidePage';
 import TextEffectRight from '../../utils/TextEffectRight';
+import HorizontalScroll from '../../utils/Scroll/HorizontalScroll';
 
 const Main = () => {
   return (
     <div>
       <S.MainWrapper>
         <Banner />
-        <TextEffect />
+        {/* <TextEffect /> */}
+        <HorizontalScroll />
+
         <Section />
         <Content />
         <S.SquareBox>

@@ -24,30 +24,32 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: yellow;
 }
 
 .lastContainer {
   display: flex;
   height: 100vh;
-  background: yellow;
 }
 
 .panel {
   width: 100vw;
   height: 100%;
 }
-.red {
-  background: blue;
-}
+
 .red {
   background: red;
-}
-.orange {
-  background: orange;
+  background-image: url(/src/assets/pexels-stephanthem-753873.jpg);
+  background-size: cover;
 }
 .purple {
   background: purple;
+  background-image: url(/src/assets/pexels-artempodrez-7048045.jpg);
+  background-size: cover;
+}
+.orange {
+  background: orange;
+  background-image: url(/src/assets/pexels-shvetsa-3683208.jpg);
+  background-size: cover;
 }
 .blue {
   background-color: blue;

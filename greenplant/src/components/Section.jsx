@@ -52,27 +52,31 @@ const Section = () => {
           className={`${isContentCardItem ? 'animate__fadeInUp' : ''}`}
         >
           <ContentCard />
-
         </S.SectionCard>
       </>
-
-      <Image
-        src='src/assets/leaf.jpg'
-        alt='유칼립투스'
-        style={{ backgroundColor: 'orange' }}
-      />
     </SectionWrapper>
   );
 };
 
 const moveInRight = keyframes`
   from {
-
+    opacity: 0;
     transform: translateX(-600px);
   }
   to {
-
+    opacity: 1;
     transform: translateX(150px);
+  }
+`;
+
+const moveInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(600px);
   }
 `;
 
@@ -84,6 +88,16 @@ const moveInUp = keyframes`
   to {
       opacity: 1;
       transform: translate(150px, 0);
+  }
+`;
+const moveInDown = keyframes`
+  from {
+      opacity: 0;
+      transform: translate(150px);
+  }
+  to {
+      opacity: 1;
+      transform: translate(150px, -900px);
   }
 `;
 const S = {
@@ -144,18 +158,11 @@ const SectionWrapper = styled.section`
   position: relative;
   width: 100%;
   display: grid;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
 `;
 
-const Image = styled.img`
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  scroll-snap-align: start;
-`;
 
 export default Section;

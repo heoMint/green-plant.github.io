@@ -34,7 +34,7 @@ const FirstCard = () => {
           key={id}
           style={{
             ...boxStyle,
-            transform: `translateY(-${scrollY * 0.1}px)`, // 스크롤 위치에 따라 카드를 위로 이동
+            transform: `translateY(-${scrollY * 0.3}px)`, // 스크롤 위치에 따라 카드를 위로 이동
           }}
         >
           <S.VideoItem
@@ -63,14 +63,16 @@ const FirstCard = () => {
     </S.BoxWrapper>
   );
 };
+
 const S = {
   BoxWrapper: styled.div`
-
+    margin-top: 1700px;
     display: flex;
     width: 100%;
+
   `,
   Box: styled.div`
-    transition: transform 0.7s ease-in-out; // transform 변경 시 부드러운 애니메이션 적용
+    transition: transform 0.7s ease-in; // transform 변경 시 부드러운 애니메이션 적용
   `,
   VideoItem: styled.div``,
   ThumbnailWrapper: styled.div`

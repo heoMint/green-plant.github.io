@@ -27,7 +27,7 @@ const SecondCard = () => {
           key={id}
           style={{
             ...boxStyle,
-            transform: `translateY(-${scrollY * 0.2}px)`, // 스크롤 위치에 따라 카드를 위로 이동
+            transform: `translateY(-${scrollY * 0.27}px)`, // 스크롤 위치에 따라 카드를 위로 이동
           }}
         >
           <S.VideoItem
@@ -64,7 +64,7 @@ const S = {
   `,
   Box: styled.div`
     /* position: relative; */
-    transition: transform 0.7s ease-in-out; // transform 변경 시 부드러운 애니메이션 적용
+    transition: transform 0.5s ease-in; // transform 변경 시 부드러운 애니메이션 적용
   `,
   VideoItem: styled.div``,
   ThumbnailWrapper: styled.div`

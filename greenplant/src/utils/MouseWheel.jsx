@@ -20,7 +20,7 @@ export default MouseWheel;
 const S = {
   LottieWrapper: styled.div`
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     z-index: 5;
     width: 70px;
     display: grid;

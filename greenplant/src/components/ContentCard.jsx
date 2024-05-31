@@ -12,7 +12,7 @@ const ContentCard = () => {
             playing={true}
             muted={true}
             width='600px'
-            height='500px'
+            height='auto'
             style={{ objectFit: 'cover' }}
           />
           <div>

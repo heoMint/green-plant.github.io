@@ -39,9 +39,9 @@ const HorizontalScroll = () => {
         ref={slider}
         className='container'
       >
-        <div className='panel red'></div>
-        <div className='panel orange'>TWO</div>
-        <div className='panel purple'>THREE</div>
+        <div className='panel red'>1</div>
+        <div className='panel purple'>2</div>
+        <div className='panel orange'>3</div>
       </div>
     </div>
   );

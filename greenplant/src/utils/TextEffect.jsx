@@ -69,7 +69,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
-  background-color: #ffd93d;
+  /* background-color: #E3DCD2; */
 `;
 
 const Text = styled.h1`
@@ -79,7 +79,7 @@ const Text = styled.h1`
   margin: 0;
   width: 100%;
   color: rgb(182, 182, 182, 0.2);
-  background: linear-gradient(to right, #6bcb77, #fc5404) no-repeat;
+  background: linear-gradient(to right, #296242, #E3DCD2) no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   background-size: 0%;
@@ -105,9 +105,9 @@ const Text = styled.h1`
     justify-content: center;
   }
 
-  &:hover > span {
+  /* &:hover > span {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
+  } */
 
   a {
     text-decoration: none;

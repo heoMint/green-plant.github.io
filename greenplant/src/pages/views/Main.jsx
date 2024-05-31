@@ -18,12 +18,12 @@ const Main = () => {
         <HorizontalScroll />
 
         <Section />
-        <Content />
         <S.SquareBox>
           <div></div>
           <TextEffectRight />
         </S.SquareBox>
-        {/* <TextEffectRight /> */}
+
+        <Content />
         <S.SlidePageWrapper>
           <SlidePage />
         </S.SlidePageWrapper>

@@ -17,10 +17,11 @@ const Content = () => {
 
 const S = {
   ContentWrapper: styled.div`
+    position: relative;
     /* width: 100%; */
   `,
   Contents: styled.div`
-    transform: translateY(20%);
+    transform: translateY(1900px);
   `,
 };
 export default Content;
